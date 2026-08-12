@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
-import { env } from "process";
+import env  from "process";
 
-export default function authMiddleware(req, res, next){
+function authMiddleware(req, res, next){
     // 1. get authorization header
     const authHeader = req.headers.authorization;
 
@@ -36,3 +36,4 @@ catch(error){
         message: "invalid or expired token",
     })
 }}
+export default authMiddleware;
