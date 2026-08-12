@@ -9,7 +9,7 @@ router.post("/login", async (req, res)=>{
     const {email, password} =req.body;
 
     // 1. find user
-    const user = users.find((user)=> user.email === email);
+    const user = users.find((user)=> user.email === email); 
     if(!user){
         return res.status(401).json({
             message: "Invalid email or password"
@@ -42,4 +42,4 @@ router.post("/login", async (req, res)=>{
         }
     );
 });
-module.exports = router;
+export default router;
